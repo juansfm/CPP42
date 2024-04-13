@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/24 19:03:14 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/04/05 17:53:46 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/04/12 18:03:25 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/04/13 16:45:26 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "Point.hpp"
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
-#include <iostream>
-
-class Fixed
+int	main(void)
 {
-	private:
-		int	rawBits;
-		static const int bits = 8;
-	public:
-		Fixed();
-		Fixed(Fixed &fixed);
-		~Fixed();
+	Point a(1, 0);
+	Point b(0, 1);
+	Point c(0, 0);
+	Point d(0.5, 0);
 
-		Fixed	&operator=(Fixed &fixed);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-};
+	if(bsp(a, b, c, d))
+		std::cout << "The point d is inside the triangle" << std::endl;
+	else
+		std::cout << "The point d is outside the triangle" << std::endl;
 
-#endif
+	return (0);
+}

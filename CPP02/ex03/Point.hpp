@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/24 19:03:14 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/04/05 17:53:46 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/04/12 18:11:42 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/04/12 18:24:34 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef POINT_HPP
+#define POINT_HPP
 
-#include <iostream>
+#include "Fixed.hpp"
 
-class Fixed
+class Point
 {
 	private:
-		int	rawBits;
-		static const int bits = 8;
-	public:
-		Fixed();
-		Fixed(Fixed &fixed);
-		~Fixed();
+		Fixed x;
+		Fixed y;
 
-		Fixed	&operator=(Fixed &fixed);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+	public:
+		//constructors and destructors
+		Point();
+		Point(float x, float y);
+		Point(Point const &point);
+		~Point();	
+
+		//operators
+		Point &operator=(Point const &point);
+
+		//getters and setters
+		Fixed getX(void) const;
+		Fixed getY(void) const;
+		void setX(float x);
+		void setY(float y);
 };
 
 #endif
