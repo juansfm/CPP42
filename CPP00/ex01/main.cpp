@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 16:42:11 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/02/07 17:15:29 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:43:17 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,7 @@ int	main(void)
 	PhoneBook phonebook;
 
 	std::cout << "ENTER A COMMAND" << std::endl;
-	std::getline(std::cin, line);
-	while (line.compare("EXIT"))
+	while (std::getline(std::cin, line))
 	{
 		if (!line.compare("ADD"))
 		{
@@ -126,7 +125,8 @@ int	main(void)
 		}
 		if (!line.compare("SEARCH"))
 			searchContact(phonebook);
+		if (!line.compare("EXIT"))
+			break;
 		std::cout << "ENTER A COMMAND" << std::endl;
-		std::getline(std::cin, line);
 	}
 };

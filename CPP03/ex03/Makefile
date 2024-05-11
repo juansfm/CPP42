@@ -1,0 +1,32 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/03/24 19:01:43 by jsaavedr          #+#    #+#              #
+#    Updated: 2024/05/02 18:30:58 by jsaavedr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = DiamondTrap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+OBJS = ${SRCS:.cpp=.o}
+CC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+
+all: ${NAME}
+
+${NAME}: ${OBJS}
+	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+
+clean :
+	rm -f ${OBJS}
+
+fclean : clean
+	rm -f ${NAME}
+
+re : fclean all
+
+.PHONY: all clean fclean re
