@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:50:16 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/02/15 16:05:00 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/14 16:05:44 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,16 @@ int	main(int argc, char **argv)
 	}
 	std::ifstream originalFile(oFile);
 	if (!originalFile.is_open())
+	{
+		std::cout << "The file doesn't exist or doesn't have the permissions" << std::endl;
 		return 1;
+	}
+	if(originalFile)
+	{
+		std::cout << "The file is empty" << std::endl;
+		originalFile.close();
+		return 1;
+	}
 	std::ofstream replaceFile(oFile.append(".replace"));
 	if (!replaceFile.is_open())
 	{

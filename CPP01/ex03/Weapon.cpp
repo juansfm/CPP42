@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:37:10 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/02/13 17:38:11 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:39:18 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ Weapon::Weapon(std::string type)
 Weapon::~Weapon()
 {}
 
-std::string &Weapon::getType(void)
+const std::string &Weapon::getType(void)
 {
-	std::string &type = this->type;
-	return type;
+	return this->type;
 }
 
 void Weapon::setType(std::string type)

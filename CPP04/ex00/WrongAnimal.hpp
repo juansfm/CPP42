@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 18:37:12 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/14 15:39:23 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/05/17 16:40:28 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/05/18 17:21:47 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
-
-#include <string>
-#include <iostream>
-
-class Weapon
-{
-	private:
-		std::string type;
-	public:
-		Weapon();
-		Weapon(std::string type);
-		~Weapon();
-		const std::string &getType(void);
-		void setType(std::string type);
-};
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:11:42 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/04/12 18:24:34 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:05:18 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Point
 {
 	private:
-		Fixed x;
-		Fixed y;
+		const Fixed x;
+		const Fixed y;
 
 	public:
 		//constructors and destructors

@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:27:02 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/02 18:39:37 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:38:48 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap &diamondTrap)
 void DiamondTrap::whoAmI()
 {
 	std::cout << "Who am I?" << std::endl;
-	std::cout << this->name << std::endl;
-	std::cout << ClapTrap::name << std::endl;
+	std::cout << "Am I " << this->name << " or am I" << ClapTrap::name << "?" << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &name)

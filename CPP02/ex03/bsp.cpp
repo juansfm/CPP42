@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:11:13 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/04/13 16:45:11 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/15 18:46:47 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed	areaABPoint(area(a, b, point));
 	Fixed	areaACPoint(area(a, c, point));
 	Fixed	areaBCPoint(area(b, c, point));
+	Fixed	fixedError(0.01f);
 
-	std::cout << "The triangle area is " << areaTriangle << " and the three areas of the subtriangles are " << areaABPoint << ", " << areaACPoint << ", " << areaBCPoint << std::endl;
 	if(areaABPoint == 0 || areaACPoint == 0 || areaBCPoint == 0)
 		return false;
-	if(areaTriangle < (areaABPoint + areaACPoint + areaBCPoint))
-		return false;
-	return true;
+	if (areaTriangle - (areaABPoint + areaACPoint + areaBCPoint) < fixedError &&
+		areaTriangle - (areaABPoint + areaACPoint + areaBCPoint) > fixedError * -1)
+		return true;
+	return false;
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 19:12:18 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/04/12 18:45:31 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/15 18:08:41 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Fixed::Fixed(const int rawBits)
 
 Fixed::Fixed(const float rawBits)
 {
-	this->rawBits = rawBits * ft_pow(2, this->bits);
+	this->rawBits = roundf(rawBits * ft_pow(2, this->bits));
 }
 
 Fixed::Fixed(const Fixed &fixed)

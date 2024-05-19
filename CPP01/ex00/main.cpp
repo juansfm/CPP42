@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:09:33 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/02/09 18:01:44 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:24:11 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ int main(void)
 	zombie2->announce();
 	zombie.announce();
 	randomChump("Pepe");
+	zombie2->announce();
+	zombie.announce();
 	delete zombie2;
 }
