@@ -6,28 +6,43 @@
 /*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:03:25 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/24 16:37:43 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/25 19:19:42 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 int main()
 {
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	const WrongAnimal *w = new WrongCat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); // will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	w->makeSound();
-	delete j; 
-	delete i;
-	delete meta;
-	delete w;
-	return 0;
+	int arraySize = 10;
+	const Animal *animal[arraySize];
+
+	std::cout << "----- Create array -----" << std::endl;
+
+	for (int i = 0; i < arraySize / 2; i++)
+		animal[i] = new Dog();
+
+	for (int i = arraySize / 2; i < arraySize; i++)
+		animal[i] = new Cat();
+
+	std::cout << "----- print sound -----" << std::endl;
+
+	for (int i = 0; i < arraySize; i++)
+		animal[i]->makeSound();
+
+	std::cout << "----- Delete array -----" << std::endl;
+	
+	for (int i = 0; i < arraySize; i++)
+		delete animal[i];
+
+	std::cout << "----- Copy -----" << std::endl;
+	
+	const Dog *dog1;
+	const Dog *dog2;
+
+	dog1 = new Dog();
+	dog2 = new Dog(*dog1);
+	delete dog1;
+	delete dog2;
+	return (0);
 }

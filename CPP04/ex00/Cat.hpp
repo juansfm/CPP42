@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:06:17 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/08 18:01:37 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/25 19:09:57 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class Cat: public Animal
 {
 	public:
 		Cat();
-		Cat(Cat &cat);
+		Cat(Cat const &cat);
 		~Cat();
 
-		Cat &operator=(Cat &cat);
-		void makeSound();
+		Cat &operator=(Cat const &cat);
+		void makeSound() const;
 };
 
 #endif

@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:05:47 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/25 19:10:13 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/05/24 17:38:10 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/05/25 19:17:28 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
+Brain::Brain()
+{}
 
-class Animal
+Brain::Brain(Brain const &brain)
 {
-	protected:
-		std::string type;
-	public:	
-		Animal();
-		Animal(Animal const &animal);
-		virtual ~Animal();
+	*this = brain;
+}
 
-		Animal &operator=(Animal const &animal);
-		std::string getType() const;
-		void setType(std::string type);
-		virtual void makeSound() const;
-};
+Brain::~Brain()
+{}
 
-#endif
+Brain &Brain::operator=(Brain const &brain)
+{
+	for (int i; i < 100; i++)
+	{
+		this->ideas[i] = brain.getIdeas(i);
+	}
+	return *this;
+}
+
+std::string Brain::getIdeas(int index) const
+{
+	return (this->ideas[index]);
+}
+
+void Brain::setIdeas(std::string idea, int index)
+{
+	this->ideas[index] = idea;
+}

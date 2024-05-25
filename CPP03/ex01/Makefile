@@ -3,23 +3,26 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+         #
+#    By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/24 19:01:43 by jsaavedr          #+#    #+#              #
-#    Updated: 2024/04/20 14:41:53 by jsaavedr         ###   ########.fr        #
+#    Updated: 2024/05/24 14:07:05 by jsaavedr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ScavTrap
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = ${SRCS:.cpp=.o}
-CC = c++
+CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+
+%.o: %.cpp
+	${CC} ${FLAGS} -c $< -o $@
 
 clean :
 	rm -f ${OBJS}
