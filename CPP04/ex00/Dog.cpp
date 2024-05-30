@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:06:21 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/25 19:09:51 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:08:17 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ Dog::Dog()
 	this->type = "dog";
 }
 
-Dog::Dog(Dog const &Dog)
+Dog::Dog(Dog const &dog): Animal(dog)
 {
 	std::cout << "Copy Dog constructor called" << std::endl;
-	*this = Dog;
+	*this = dog;
 }
 
 Dog::~Dog()
@@ -29,10 +29,10 @@ Dog::~Dog()
 	std::cout << "Default Dog destructor called" << std::endl;
 }
 
-Dog &Dog::operator=(Dog const &Dog)
+Dog &Dog::operator=(Dog const &dog)
 {
 	std::cout << "Copy assigment Dog operator called" << std::endl;
-	this->type = Dog.getType();
+	this->type = dog.getType();
 	return (*this);
 }
 

@@ -6,27 +6,22 @@
 /*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:38:10 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/30 16:05:28 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/25 19:17:28 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
 Brain::Brain()
-{
-	std::cout << "Default Brain constructor called" << std::endl;
-}
+{}
 
 Brain::Brain(Brain const &brain)
 {
-	std::cout << "Copy Brain constructor called" << std::endl;
 	*this = brain;
 }
 
 Brain::~Brain()
-{
-	std::cout << "Default Brain destructor called" << std::endl;
-}
+{}
 
 Brain &Brain::operator=(Brain const &brain)
 {

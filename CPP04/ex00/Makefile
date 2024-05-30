@@ -6,15 +6,15 @@
 #    By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 13:46:30 by jsaavedr          #+#    #+#              #
-#    Updated: 2024/05/24 16:38:39 by jsaavedr         ###   ########.fr        #
+#    Updated: 2024/05/30 16:01:52 by jsaavedr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animal
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = ${SRCS:.cpp=.o}
-CC = clang++
-Flags = -Wall -Wextra -Werror -std=c++98
+CC = g++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME}
 

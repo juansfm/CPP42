@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:19:05 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/26 18:40:38 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/05/24 17:33:44 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/05/25 19:16:37 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <string>
 
-class Dog: public Animal
+class Brain
 {
-private:
-	Brain *brain;
+	private:
+		std::string ideas[100];
+	public:
+		Brain();
+		Brain(Brain const &brain);
+		~Brain();
 
-public:
-	Dog();
-	Dog(Dog const &dog);
-	~Dog();
-
-	Dog &operator=(Dog const &dog);
-	Brain getBrain() const;
-	void setBrain(Brain const &brain);
-	void makeSound() const;
+		Brain &operator=(Brain const &Brain);
+		void setIdeas(std::string idea, int index);
+		std::string getIdeas(int index) const;
 };
 
 #endif

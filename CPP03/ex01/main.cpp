@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:03:25 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/04/23 18:00:47 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:04:24 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,5 @@ int	main(void)
 	Paquito.guardGate();
 	std::cout << Paquito.getEnergyPoints() << " energy points from " << Paquito. getName()<< std::endl;
 	std::cout << "----------" << std::endl;
-	return (0);
-
-
-
-
 	return (0);
 }

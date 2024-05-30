@@ -6,27 +6,42 @@
 /*   By: jsaavedr <jsaavedr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:03:25 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/05/28 13:04:28 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/05/26 18:26:25 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-
-int	main(void)
+#include "Cat.hpp"
+#include "Dog.hpp"
+int main()
 {
-	FragTrap Paquito("Paquito");
-	FragTrap Pepe;
-	FragTrap Pepito = Pepe;
+	int arraySize = 10;
+	const Animal *animal[arraySize];
+	std::cout << "----- Create array -----" << std::endl;
 
-	std::cout << "----------" << std::endl;
-	Paquito.attack("Pepe");
-	Pepe.takeDamage(30);
-	Pepe.attack("Paquito");
-	Paquito.takeDamage(30);
-	std::cout << "----------" << std::endl;
-	Paquito.beRepaired(5);
-	Paquito.highFiveGuys();
-	std::cout << Paquito.getEnergyPoints() << " energy points from " << Paquito. getName()<< std::endl;
-	std::cout << "----------" << std::endl;
+	for (int i = 0; i < arraySize / 2; i++)
+		animal[i] = new Dog();
+
+	for (int i = arraySize / 2; i < arraySize; i++)
+		animal[i] = new Cat();
+
+	std::cout << "----- print sound -----" << std::endl;
+
+	for (int i = 0; i < arraySize; i++)
+		animal[i]->makeSound();
+
+	std::cout << "----- Delete array -----" << std::endl;
+	
+	for (int i = 0; i < arraySize; i++)
+		delete animal[i];
+
+	std::cout << "----- Copy -----" << std::endl;
+	
+	const Dog *dog1;
+	const Dog *dog2;
+
+	dog1 = new Dog();
+	dog2 = new Dog(*dog1);
+	delete dog1;
+	delete dog2;
 	return (0);
 }
