@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:59:03 by juan              #+#    #+#             */
-/*   Updated: 2024/07/16 22:06:58 by juan             ###   ########.fr       */
+/*   Updated: 2024/09/17 13:10:50 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 		std::cerr << e.what() << '\n';
 		this->grade = 150;
 	}
-	
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy) : name(copy.getName()), grade(copy.getGrade())

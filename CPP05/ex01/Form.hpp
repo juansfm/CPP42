@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 21:54:51 by juan              #+#    #+#             */
-/*   Updated: 2024/08/17 21:16:16 by juan             ###   ########.fr       */
+/*   Updated: 2024/09/17 19:36:39 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ class Form
 				virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &os, const Form &form);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:59:03 by juan              #+#    #+#             */
-/*   Updated: 2024/08/15 14:41:16 by juan             ###   ########.fr       */
+/*   Updated: 2024/09/17 19:39:57 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 		std::cerr << e.what() << '\n';
 		this->grade = 150;
 	}
-	
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy) : name(copy.getName()), grade(copy.getGrade())
@@ -90,20 +89,19 @@ void Bureaucrat::decrementGrade()
 	}
 }
 
-void Bureaucrat::signForm(Form &src)
+void Bureaucrat::signForm(Form &form)
 {
-	if (src.getSigned())
+	if (form.getSigned())
 	{
-		std::cout << this->name << " couldn't sign " << src.getName() << " because is signed" << std::endl;
+		std::cout << this->name << " couldn't sign " << form.getName() << " because is signed" << std::endl;
 		return ;
 	}
-	if (this->grade > src.getSignGrade())
+	if (this->grade > form.getSignGrade())
 	{
-		std::cout << this->name << " couldn't sign " << src.getName() << " because his grade is too low" << std::endl;
+		std::cout << this->name << " couldn't sign " << form.getName() << " because his grade is too low" << std::endl;
 		return ;
 	}
-	src.beSigned(*this);
-	std::cout << this->name << " signed " << src.getName() << std::endl;
+	std::cout << this->name << " signed " << form.getName() << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

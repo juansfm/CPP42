@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/18 19:44:19 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/18 19:45:41 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,18 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		delete rrf;
+		AForm *fail = someRandomIntern.makeForm("conquest world", "World");
+	}
+	/*
 	Bureaucrat  a("Jose", 1);
 	Bureaucrat  b("Pepe", 72);
 
@@ -69,7 +78,7 @@ int main()
 	a.executeForm(fR);
 	fR.execute(a);
 	std::cout << std::endl;
-	
+		
 	std::cout << "--------------------" << std::endl;
 	std::cout << "--- Presidential ---" << std::endl;
 	std::cout << "--------------------" << std::endl;
@@ -93,4 +102,5 @@ int main()
 	std::cout << std::endl;
 	//AForm z;
 	return(0);
+	*/
 }

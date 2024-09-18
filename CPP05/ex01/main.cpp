@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/08/28 20:26:45 by juan             ###   ########.fr       */
+/*   Updated: 2024/09/17 19:40:34 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int main()
 	Bureaucrat b5("Quico", 149);
 
 	b5.signForm(f1);
+	f1.beSigned(b5);
 	b1.signForm(f2);
+	f2.beSigned(b1);
 	std::cout << "----" << std::endl;
 	f2.beSigned(b5);
 	
