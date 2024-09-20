@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:02:10 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/18 19:42:02 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/20 19:58:36 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ Intern::Intern()
 {}
 
 Intern::Intern(Intern const &copy)
-{}
+{
+	(void)copy;
+}
 
 Intern::~Intern()
 {}
 
 Intern &Intern::operator=(Intern const &copy)
 {
+	(void)copy;
 	return *this;
 }
 

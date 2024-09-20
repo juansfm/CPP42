@@ -48,7 +48,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 			throw AForm::GradeTooLowException();
 		std::cout << "Making drill noises" << std::endl;
 
-		std::srand(std::time(nullptr));
+		std::srand(std::time(NULL));
 		int result = std::rand() % 2;
 
 		if (result == 1)

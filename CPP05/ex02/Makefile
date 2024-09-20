@@ -6,7 +6,7 @@
 #    By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 20:45:11 by juan              #+#    #+#              #
-#    Updated: 2024/09/18 18:46:18 by jsaavedr         ###   ########.fr        #
+#    Updated: 2024/09/20 19:51:30 by jsaavedr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${CC} ${FLAGS} ${OBJS} -o ${NAME}
+
+%.o: %.cpp
+	${CC} ${FLAGS} -c $< -o $@
 
 clean :
 	rm -f ${OBJS}

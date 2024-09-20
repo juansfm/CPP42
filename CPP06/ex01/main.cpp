@@ -6,28 +6,18 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/20 19:52:28 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:36:43 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ScalarConverter.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
-	std::cout << "----Correct bureaucrats----" << std::endl;
-	Bureaucrat b1;
-	Bureaucrat b2("Jefe", 1);
-
-	std::cout << b1 << " y " << b2 << std::endl;
-
-	std::cout << "----Incorrect bureaucrats----" << std::endl;
-	Bureaucrat b3("Pepe", 156);
-	Bureaucrat b4("Paco", -1);
-	
-	std::cout << "----Out of range increment and decrement" << std::endl;
-
-	b1.decrementGrade();
-	b2.incrementGrade();
-
-	std::cout << "Goodbye" << std::endl;
+	if (argc != 2)
+	{
+		std::cout << "Wrong number of arguments" << std::endl;
+		return 0;
+	}
+	ScalarConverter::convert(argv[1]);
 }

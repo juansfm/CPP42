@@ -6,12 +6,12 @@
 #    By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 20:45:11 by juan              #+#    #+#              #
-#    Updated: 2024/09/20 19:51:09 by jsaavedr         ###   ########.fr        #
+#    Updated: 2024/09/20 19:50:53 by jsaavedr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
-SRCS = main.cpp Bureaucrat.cpp
+NAME = ScalarConverter
+SRCS = main.cpp ScalarConverter.cpp
 OBJS = ${SRCS:.cpp=.o}
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98

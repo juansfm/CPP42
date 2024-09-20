@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/18 19:45:41 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/20 19:58:07 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main()
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		delete rrf;
 		AForm *fail = someRandomIntern.makeForm("conquest world", "World");
+		std::cout << fail << std::endl;
 	}
-	/*
 	Bureaucrat  a("Jose", 1);
 	Bureaucrat  b("Pepe", 72);
 
@@ -102,5 +102,4 @@ int main()
 	std::cout << std::endl;
 	//AForm z;
 	return(0);
-	*/
 }
