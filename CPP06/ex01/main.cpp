@@ -6,18 +6,29 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/20 20:36:43 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:53:04 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc != 2)
-	{
-		std::cout << "Wrong number of arguments" << std::endl;
-		return 0;
-	}
-	ScalarConverter::convert(argv[1]);
+	Data data;
+
+	data.name = "John";
+	data.number = 27;
+	std::cout << &data << std::endl;
+	std::cout << "Name: " << data.name << std::endl;
+	std::cout << "Number: " << data.number << std::endl;
+
+	uintptr_t code = Serializer::serialize(&data);
+	std::cout << code << std::endl;
+
+	Data *descode = Serializer::deserialize(code);
+	descode->name = "John";
+	descode->number = 27;
+	std::cout << &descode << std::endl;
+	std::cout << "Name: " << descode->name << std::endl;
+	std::cout << "Number: " << descode->number << std::endl;
 }

@@ -6,12 +6,12 @@
 #    By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 20:45:11 by juan              #+#    #+#              #
-#    Updated: 2024/09/21 14:47:32 by jsaavedr         ###   ########.fr        #
+#    Updated: 2024/09/21 18:47:32 by jsaavedr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Serializer
-SRCS = main.cpp Serializer.cpp
+NAME = Base
+SRCS = main.cpp Base.cpp
 OBJS = ${SRCS:.cpp=.o}
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
