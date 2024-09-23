@@ -10,40 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
-#include <iostream>
+#include "Span.hpp"
 
-int main()
-{
-	try {	
-		Array<int> emptyArray;
+int main() {
+	try {
+		Span sp = Span(5);
+		sp.addNumber(6);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
 
-		std::cout << "Size of empty array: " << emptyArray.size() << std::endl;
-		
-		Array<int> intArray(5);
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
 
-		for (unsigned int i = 0; i < intArray.size(); i++) {
-			intArray[i] = i * 2;
+		Span largeSpan = Span(10000);
+
+		std::vector<int> numbers;
+		for (unsigned int i = 0; i < 10000; ++i) {
+			numbers.push_back(i);
 		}
 
-		for (unsigned int i = 0; i < intArray.size(); i++) {
-			std::cout << "intArray[" << i << "] = " << intArray[i] << std::endl;
-		}
+		largeSpan.addRangeOfNumbers(numbers.begin(), numbers.end());
 
-		Array<int> copiedArray = intArray;
-		std::cout << "Copied Array:" << std::endl;
-		for (unsigned int i = 0; i < copiedArray.size(); i++) {
-			std::cout << "copiedArray[" << i << "] = " << copiedArray[i] << std::endl;
-		}
+		std::cout << "Shortest Span (large): " << largeSpan.shortestSpan() << std::endl;
+		std::cout << "Longest Span (large): " << largeSpan.longestSpan() << std::endl;
 
-		copiedArray[0] = 100;
-		std::cout << "After modifying copied array:" << std::endl;
-		std::cout << "Original Array: " << intArray[0] << std::endl;
-		std::cout << "Copied Array: " << copiedArray[0] << std::endl;
-
-		std::cout << intArray[10] << std::endl;
-
-	} catch (std::exception &e) {
+	} catch (const std::exception &e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 

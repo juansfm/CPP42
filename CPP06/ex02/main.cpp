@@ -76,10 +76,11 @@ void identify(Base &p)
 
 int main()
 {
-	Base *prueba = generate();
+	Base *randomize = generate();
 
-	identify(prueba);
-	identify(*prueba);
+	identify(randomize);
+	identify(*randomize);
 
-	delete prueba;
+	delete randomize;
+	return 0;
 }

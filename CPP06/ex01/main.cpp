@@ -31,4 +31,5 @@ int main()
 	std::cout << &descode << std::endl;
 	std::cout << "Name: " << descode->name << std::endl;
 	std::cout << "Number: " << descode->number << std::endl;
+	return 0;
 }

@@ -20,4 +20,5 @@ int main(int argc, char **argv)
 		return 0;
 	}
 	ScalarConverter::convert(argv[1]);
+	return 0;
 }
