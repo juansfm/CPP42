@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsaavedr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:38:13 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/23 13:38:16 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:52:27 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Span::~Span()
 
 Span &Span::operator=(Span const &copy)
 {
-	(void)copy;
+	this->N = copy.getN();
+	this->numbers = copy.numbers;
 	return *this;
 }
 

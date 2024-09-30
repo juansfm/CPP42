@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:59:15 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/20 20:35:22 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/29 12:35:31 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,6 @@ void convertPseudoD(std::string const &literal)
 void ScalarConverter::convert(const std::string &literal)
 {
 	type_in inType = getType(literal);
-	std::cout << inType << std::endl;
 	std::cout << std::fixed << std::setprecision(1);
 	switch(inType)
 	{

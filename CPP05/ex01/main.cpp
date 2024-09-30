@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/17 19:40:34 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/28 18:34:52 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	Bureaucrat b1;
 	Bureaucrat b2("Jefe", 1);
 
-	std::cout << b1 << " y " << b2 << std::endl;
+	std::cout << b1 << " and " << b2 << std::endl;
 
 	std::cout << "----Incorrect bureaucrats----" << std::endl;
 	Bureaucrat b3("Pepe", 156);

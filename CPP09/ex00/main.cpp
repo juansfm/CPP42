@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/29 15:53:54 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/09/22 17:41:51 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/09/25 17:49:19 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "iter.hpp"
+#include "BitcoinExchange.hpp"
 
-int main() 
+int main(int argc, char **argv)
 {
-	int array[5] = {1, 2, 3, 4, 5};
-	std::string words[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+	BitcoinExchange btc;
 
-	::iter(array, 5, ::printElement);
-	::iter(words, 6, ::printElement);
+	(void)argv;
+	if (argc != 2)
+	{
+		std::cout << "Error: Wrong number of parameters" << std::endl;
+		return 0;
+	}
+	btc.readData("data.csv");
+	btc.inputFile(argv[1]);
+
 	return 0;
 }

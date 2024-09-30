@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/29 15:53:54 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/09/25 17:35:20 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/09/26 13:32:30 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RPN_HPP
+#define RPN_HPP
+
 #include <iostream>
-#include "iter.hpp"
+#include <stack>
+#include <string>
+#include <cstdlib>
+#include <algorithm>
 
-int main() 
+class RPN
 {
-	int array[5] = {1, 2, 3, 4, 5};
-	std::string words[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+	private:
+		std::stack<int> numbers;
+	public:
+		RPN();
+		RPN(const RPN &copy);
+		~RPN();
 
-	::iter(array, 5, ::printElement);
-	::iter(words, 6, ::printElement);
-	return 0;
-}
+		RPN &operator=(const RPN &copy);
+		int readExpression(std::string expression);
+};
+
+#endif

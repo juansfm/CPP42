@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   print.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/13 13:58:58 by juan              #+#    #+#             */
-/*   Updated: 2024/09/29 15:53:54 by jsaavedr         ###   ########.fr       */
+/*   Created: 2024/09/27 19:05:50 by jsaavedr          #+#    #+#             */
+/*   Updated: 2024/09/27 20:23:48 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "iter.hpp"
 
-int main() 
+template<typename T>
+void print(const T &container)
 {
-	int array[5] = {1, 2, 3, 4, 5};
-	std::string words[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-
-	::iter(array, 5, ::printElement);
-	::iter(words, 6, ::printElement);
-	return 0;
+	typename T::const_iterator it;
+	for (it = container.begin(); it != container.end(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
 }
