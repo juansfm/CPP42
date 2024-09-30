@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 17:25:16 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/30 15:20:49 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:59:32 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,16 @@ bool PmergeMe::inputNumbers(char **input)
 	return true;
 }
 
+void insertInOrder(std::vector<int>& sorted, int element)
+{
+	std::vector<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), element);
+
+	if (pos == sorted.end())
+		sorted.push_back(element);
+	else
+		sorted.insert(pos, element);
+}
+
 void PmergeMe::vecSort()
 {
 	for (size_t i = 0;  i + 1 < this->vec.size(); i += 2)
@@ -64,13 +74,14 @@ void PmergeMe::vecSort()
 		if (this->vec[i] > this->vec[i + 1])
 			std::swap(this->vec[i], this->vec[i + 1]);
 	}
-	std::vector<int> sorted(this->vec.begin(), this->vec.begin() + 2);
+	std::vector<int> sorted;
 	sorted.reserve(this->vec.size());
-	for (size_t i = 2; i + 1 < this->vec.size(); i += 2)
+	sorted.push_back(this->vec[0]);
+	sorted.push_back(this->vec[1]);
+	for (size_t i = 2; i < this->vec.size(); i += 2)
 	{
-			std::vector<int> newVec(sorted.size() + 2);
-			std::merge(sorted.begin(), sorted.end(), this->vec.begin() + i, this->vec.begin() + i + 2, newVec.begin());
-			std::swap(sorted, newVec);
+		insertInOrder(sorted, this->vec[i]);
+		insertInOrder(sorted, this->vec[i + 1]);
 	}
 	std::merge(sorted.begin(), sorted.end(), this->vec.begin() + sorted.size(), this->vec.end(), this->vec.begin());
 }
@@ -116,20 +127,17 @@ void PmergeMe::listSort()
 
 void PmergeMe::sort()
 {
-	std::clock_t time;
 	std::cout << "Before: ";
 	::print(this->vec);
-	::print(this->list);
-	time = std::clock();
+	this->vecTime = std::clock();
 	this->vecSort();
-	this->vecTime = std::clock() - time;
+	this->vecTime = std::clock() - this->vecTime;
 	std::cout << this->vecTime << std::endl;
-	time = std::clock();
+	this->listTime = std::clock();
 	this->listSort();
-	this->listTime = std::clock() - time;
+	this->listTime = std::clock() - this->listTime;
 	std::cout << "After: ";
 	::print(this->vec);
-	::print(this->list);
 	std::cout << "Time to process a range of "<< this->vec.size() << " elements with std::vector : " << this->vecTime << " us" << std::endl;
 	std::cout << "Time to process a range of "<< this->list.size() << " elements with std::list : " << this->listTime << " us" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:38:39 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/26 14:53:33 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:20:51 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ int RPN::readExpression(std::string expression)
 					this->numbers.top() += factor;
 					break;
 				case 1:
-					this->numbers.top() = factor - this->numbers.top();
+					this->numbers.top() -= factor;
 					break;
 				case 2:
 					this->numbers.top() *= factor;
 					break;
 				case 3:
-					if (this->numbers.top() == 0)
+					if (factor == 0)
 						return 5;
-					this->numbers.top() = factor / this->numbers.top();
+					this->numbers.top() /= factor;
 					break;
 			}
 		}

@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:44:39 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/25 17:18:56 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:28:47 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ bool isCorrectDate(std::string date)
 		return false;
 	if (day < 1 || day > 31)
 		return false;
-	if (day > 29 && month == 2)
-		return false;
 	if (day == 31 && month == 4 && month == 6 && month == 9 && month == 11)
 		return false;
 	if (day == 29 && month == 2 && year % 4 == 0)
@@ -73,6 +71,8 @@ bool isCorrectDate(std::string date)
 			return false;
 		return true;
 	}
+	if (day > 29 && month == 2)
+		return false;
 	return true;
 }
 
@@ -103,7 +103,6 @@ double BitcoinExchange::mapSearch(std::string key)
 	std::map<std::string, double>::const_iterator prev = --lower;
 
 	lower++;
-	std::cout << "original date: " << key << ", lower date: " << lower->first << ", prev date: " << prev->first << std::endl;
 	if (!dateDiference(key, lower->first) || !dateDiference(key, prev->first))
 		return this->bitcoinValues[key];
 	if (dateDiference(key, lower->first) > dateDiference(key, prev->first))
