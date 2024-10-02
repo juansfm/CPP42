@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:44:39 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/30 18:28:47 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:35:32 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ bool isCorrectDate(std::string date)
 		return false;
 	if (day < 1 || day > 31)
 		return false;
-	if (day == 31 && month == 4 && month == 6 && month == 9 && month == 11)
+	if (day == 31 && (month == 4 || month == 6 || month == 9 || month == 11))
 		return false;
 	if (day == 29 && month == 2 && year % 4 == 0)
 	{
@@ -71,7 +71,7 @@ bool isCorrectDate(std::string date)
 			return false;
 		return true;
 	}
-	if (day > 29 && month == 2)
+	if (day >= 29 && month == 2)
 		return false;
 	return true;
 }

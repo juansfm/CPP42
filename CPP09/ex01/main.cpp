@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:41:51 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/26 16:04:00 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:38:37 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(int argc, char **argv)
 	int error = rpn.readExpression(argv[1]);
 	switch(error)
 	{
+		case 0:
+			std::cerr << "Error: Empty string" << std::endl;
 		case 1:
 			std::cerr << "Error: Wrong characters" << std::endl;
 			break;

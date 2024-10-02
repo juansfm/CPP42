@@ -6,7 +6,7 @@
 /*   By: jsaavedr <jsaavedr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:38:39 by jsaavedr          #+#    #+#             */
-/*   Updated: 2024/09/30 18:20:51 by jsaavedr         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:38:14 by jsaavedr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int RPN::readExpression(std::string expression)
 	std::string validCharacters("0123456789+-*/ ");
 	std::string operators("+-*/");
 
+	if (expression.empty())
+		return 0;
 	for (std::size_t i = 0; i < expression.length(); i++)
 		if (validCharacters.find(expression[i]) == std::string::npos)
 			return 1;
